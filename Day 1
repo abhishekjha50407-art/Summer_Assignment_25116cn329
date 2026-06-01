@@ -1,0 +1,67 @@
+question 1
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++) {
+        sum = sum + i;
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+question 2
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
+    }
+question 3
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long fact = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+question 4
+    printf("Factorial = %lld", fact);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    while(n != 0) {
+        n = n / 10;
+        count++;
+    }
+
+    printf("Total digits = %d", count);
+
+    return 0;
+}
