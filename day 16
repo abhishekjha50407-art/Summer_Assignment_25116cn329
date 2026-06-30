@@ -1,0 +1,124 @@
+question 1
+#include <stdio.h>
+
+int main() {
+        int n, i, sum = 0, total;
+
+            printf("Enter value of n: ");
+                scanf("%d", &n);
+
+                    int arr[n - 1];
+
+                        printf("Enter %d elements:\n", n - 1);
+                            for(i = 0; i < n - 1; i++) {
+                                        scanf("%d", &arr[i]);
+                                                sum += arr[i];
+                            }
+
+                                total = n * (n + 1) / 2;
+
+                                    printf("Missing number = %d", total - sum);
+
+                                        return 0;
+}
+                            }
+}
+question 2
+#include <stdio.h>
+
+int main() {
+    int n, i, j, maxFreq = 0, element;
+
+        printf("Enter number of elements: ");
+            scanf("%d", &n);
+
+                int arr[n];
+
+                    printf("Enter array elements:\n");
+                        for(i = 0; i < n; i++)
+                                scanf("%d", &arr[i]);
+
+                                    for(i = 0; i < n; i++) {
+                                            int count = 1;
+                                                    for(j = i + 1; j < n; j++) {
+                                                                if(arr[i] == arr[j])
+                                                                                count++;
+                                                                                        }
+
+                                                                                                if(count > maxFreq) {
+                                                                                                            maxFreq = count;
+                                                                                                                        element = arr[i];
+                                                                                                                                }
+                                                                                                                                    }
+
+                                                                                                                                        printf("Maximum frequency element = %d\n", element);
+                                                                                                                                            printf("Frequency = %d", maxFreq);
+
+                                                                                                                                                return 0;
+
+question 3
+#include <stdio.h>
+
+int main() {
+    int n, i, j, sum, found = 0;
+    
+        printf("Enter number of elements: ");
+            scanf("%d", &n);
+            
+                int arr[n];
+                
+                    printf("Enter array elements:\n");
+                        for(i = 0; i < n; i++)
+                                scanf("%d", &arr[i]);
+                                
+                                    printf("Enter required sum: ");
+                                        scanf("%d", &sum);
+                                        
+                                            printf("Pairs are:\n");
+                                                for(i = 0; i < n; i++) {
+                                                        for(j = i + 1; j < n; j++) {
+                                                                    if(arr[i] + arr[j] == sum) {
+                                                                                    printf("(%d, %d)\n", arr[i], arr[j]);
+                                                                                                    found = 1;
+                                                                                                                }
+                                                                                                                        }
+                                                                                                                            }
+                                                                                                                            
+                                                                                                                                if(found == 0)
+                                                                                                                                        printf("No pair found.");
+                                                                                                                                        
+                                                                                                                                            return 0;
+ 
+ question 4
+#include <stdio.h>
+
+int main() {
+    int n, i, j, k;
+    
+        printf("Enter number of elements: ");
+            scanf("%d", &n);
+            
+                int arr[n];
+                
+                    printf("Enter array elements:\n");
+                        for(i = 0; i < n; i++)
+                                scanf("%d", &arr[i]);
+                                
+                                    for(i = 0; i < n; i++) {
+                                            for(j = i + 1; j < n; ) {
+                                                        if(arr[i] == arr[j]) {
+                                                                        for(k = j; k < n - 1; k++)
+                                                                                            arr[k] = arr[k + 1];
+                                                                                                            n--;
+                                                                                                                        } else {
+                                                                                                                                        j++;
+                                                                                                                                                    }
+                                                                                                                                                            }
+                                                                                                                                                                }
+                                                                                                                                                                
+                                                                                                                                                                    printf("Array after removing duplicates:\n");
+                                                                                                                                                                        for(i = 0; i < n; i++)
+                                                                                                                                                                                printf("%d ", arr[i]);
+                                                                                                                                                                                
+                                                                                                                                                                                    return 0;
+                                                                                                                                                                                    }                                                                                                                                       }                                                                                                                                            }
