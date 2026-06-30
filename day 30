@@ -1,0 +1,199 @@
+question 1
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+        int data;
+            struct Node *next;
+};
+
+int main() {
+        struct Node *head = NULL, *temp, *prev, *newNode;
+            int n, i;
+
+                printf("Enter number of nodes: ");
+                    scanf("%d", &n);
+
+                        for (i = 0; i < n; i++) {
+                                    newNode = (struct Node *)malloc(sizeof(struct Node));
+                                            scanf("%d", &newNode->data);
+                                                    newNode->next = NULL;
+
+                                                            if (head == NULL)
+                                                                        head = temp = newNode;
+                                                                                else {
+                                                                                                temp->next = newNode;
+                                                                                                            temp = newNode;
+                                                                                }
+                        }
+
+                            if (head == NULL)
+                                    printf("List is empty.");
+                                        else if (head->next == NULL) {
+                                                    free(head);
+                                                            head = NULL;
+                                        } else {
+                                                    temp = head;
+                                                            while (temp->next != NULL) {
+                                                                            prev = temp;
+                                                                                        temp = temp->next;
+                                                            }
+                                                                    prev->next = NULL;
+                                                                            free(temp);
+                                        }
+
+                                            printf("List after deletion:\n");
+                                                temp = head;
+                                                    while (temp != NULL) {
+                                                                printf("%d -> ", temp->data);
+                                                                        temp = temp->next;
+                                                    }
+                                                        printf("NULL");
+
+                                                            return 0;
+}
+                                                    }
+                                                            }
+                                        }
+                                        }
+                                                                                }
+                        }
+}
+}
+question 2
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+        struct Node *next;
+        };
+
+        int main() {
+            struct Node *head = NULL, *temp, *newNode;
+                int n, i, key, pos = 1, found = 0;
+
+                    printf("Enter number of nodes: ");
+                        scanf("%d", &n);
+
+                            for (i = 0; i < n; i++) {
+                                    newNode = (struct Node *)malloc(sizeof(struct Node));
+                                            scanf("%d", &newNode->data);
+                                                    newNode->next = NULL;
+
+                                                            if (head == NULL)
+                                                                        head = temp = newNode;
+                                                                                else {
+                                                                                            temp->next = newNode;
+                                                                                                        temp = newNode;
+                                                                                                                }
+                                                                                                                    }
+
+                                                                                                                        printf("Enter element to search: ");
+                                                                                                                            scanf("%d", &key);
+
+                                                                                                                                temp = head;
+                                                                                                                                    while (temp != NULL) {
+                                                                                                                                            if (temp->data == key) {
+                                                                                                                                                        found = 1;
+                                                                                                                                                                    break;
+                                                                                                                                                                            }
+                                                                                                                                                                                    temp = temp->next;
+                                                                                                                                                                                            pos++;
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                    if (found)
+                                                                                                                                                                                                            printf("Element found at position %d", pos);
+                                                                                                                                                                                                                else
+                                                                                                                                                                                                                        printf("Element not found");
+
+                                                                                                                                                                                                                            return 0;
+question 3
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+        struct Node *next;
+        };
+        
+        int main() {
+            struct Node *head = NULL, *temp, *newNode;
+                int n, i, count = 0;
+                
+                    printf("Enter number of nodes: ");
+                        scanf("%d", &n);
+                        
+                            for (i = 0; i < n; i++) {
+                                    newNode = (struct Node *)malloc(sizeof(struct Node));
+                                            scanf("%d", &newNode->data);
+                                                    newNode->next = NULL;
+                                                    
+                                                            if (head == NULL)
+                                                                        head = temp = newNode;
+                                                                                else {
+                                                                                            temp->next = newNode;
+                                                                                                        temp = newNode;
+                                                                                                                }
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                        temp = head;
+                                                                                                                            while (temp != NULL) {
+                                                                                                                                    count++;
+                                                                                                                                            temp = temp->next;
+                                                                                                                                                }
+                                                                                                                                                
+                                                                                                                                                    printf("Total Nodes = %d", count);
+                                                                                                                                                    
+                                                                                                                                                        return 0;
+
+question 4
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+        struct Node *next;
+        };
+        
+        int main() {
+            struct Node *head = NULL, *temp, *newNode;
+                struct Node *prev = NULL, *current, *next;
+                    int n, i;
+                    
+                        printf("Enter number of nodes: ");
+                            scanf("%d", &n);
+                            
+                                for (i = 0; i < n; i++) {
+                                        newNode = (struct Node *)malloc(sizeof(struct Node));
+                                                scanf("%d", &newNode->data);
+                                                        newNode->next = NULL;
+                                                        
+                                                                if (head == NULL)
+                                                                            head = temp = newNode;
+                                                                                    else {
+                                                                                                temp->next = newNode;
+                                                                                                            temp = newNode;
+                                                                                                                    }
+                                                                                                                        }
+                                                                                                                        
+                                                                                                                            current = head;
+                                                                                                                                while (current != NULL) {
+                                                                                                                                        next = current->next;
+                                                                                                                                                current->next = prev;
+                                                                                                                                                        prev = current;
+                                                                                                                                                                current = next;
+                                                                                                                                                                    }
+                                                                                                                                                                    
+                                                                                                                                                                        head = prev;
+                                                                                                                                                                        
+                                                                                                                                                                            printf("Reversed Linked List:\n");
+                                                                                                                                                                                temp = head;
+                                                                                                                                                                                    while (temp != NULL) {
+                                                                                                                                                                                            printf("%d -> ", temp->data);
+                                                                                                                                                                                                    temp = temp->next;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                            printf("NULL");
+                                                                                                                                                                                                            
+                                                                                                                                                                                                                return 0;
+                                                                                                                                                                                                                }                                                                                                                                         }                                                                                                                                                                                                                        }
