@@ -1,0 +1,125 @@
+question 1
+#include <stdio.h>
+
+int main() {
+        int a[50], b[50], c[100];
+            int n1, n2, i, j, k = 0;
+
+                printf("Enter size of first array: ");
+                    scanf("%d", &n1);
+
+                        printf("Enter elements of first sorted array:\n");
+                            for (i = 0; i < n1; i++)
+                                    scanf("%d", &a[i]);
+
+                                        printf("Enter size of second array: ");
+                                            scanf("%d", &n2);
+
+                                                printf("Enter elements of second sorted array:\n");
+                                                    for (i = 0; i < n2; i++)
+                                                            scanf("%d", &b[i]);
+
+                                                                i = 0;
+                                                                    j = 0;
+
+                                                                        while (i < n1 && j < n2) {
+                                                                                    if (a[i] < b[j])
+                                                                                                c[k++] = a[i++];
+                                                                                                        else
+                                                                                                                    c[k++] = b[j++];
+                                                                        }
+
+                                                                            while (i < n1)
+                                                                                    c[k++] = a[i++];
+
+                                                                                        while ()
+                                                                        }
+}
+question 2
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+        int i, j;
+
+            printf("Enter first string: ");
+                scanf("%s", str1);
+
+                    printf("Enter second string: ");
+                        scanf("%s", str2);
+
+                            printf("Common characters: ");
+
+                                for (i = 0; str1[i] != '\0'; i++) {
+                                        for (j = 0; str2[j] != '\0'; j++) {
+                                                    if (str1[i] == str2[j]) {
+                                                                    printf("%c ", str1[i]);
+                                                                                    break;
+                                                                                                }
+                                                                                                        }
+                                                                                                            }
+
+                                                                                                                return 0;
+
+question 3
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[10][50], temp[50];
+        int n, i, j;
+        
+            printf("Enter number of names: ");
+                scanf("%d", &n);
+                
+                    printf("Enter names:\n");
+                        for (i = 0; i < n; i++)
+                                scanf("%s", name[i]);
+                                
+                                    for (i = 0; i < n - 1; i++) {
+                                            for (j = i + 1; j < n; j++) {
+                                                        if (strcmp(name[i], name[j]) > 0) {
+                                                                        strcpy(temp, name[i]);
+                                                                                        strcpy(name[i], name[j]);
+                                                                                                        strcpy(name[j], temp);
+                                                                                                                    }
+                                                                                                                            }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                    printf("Names in alphabetical order:\n");
+                                                                                                                                        for (i = 0; i < n; i++)
+                                                                                                                                                printf("%s\n", name[i]);
+                                                                                                                                                
+                                                                                                                                                    return 0;
+
+question 4
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[10][50], temp[50];
+        int n, i, j;
+        
+            printf("Enter number of words: ");
+                scanf("%d", &n);
+                
+                    printf("Enter words:\n");
+                        for (i = 0; i < n; i++)
+                                scanf("%s", word[i]);
+                                
+                                    for (i = 0; i < n - 1; i++) {
+                                            for (j = i + 1; j < n; j++) {
+                                                        if (strlen(word[i]) > strlen(word[j])) {
+                                                                        strcpy(temp, word[i]);
+                                                                                        strcpy(word[i], word[j]);
+                                                                                                        strcpy(word[j], temp);
+                                                                                                                    }
+                                                                                                                            }
+                                                                                                                                }
+                                                                                                                                
+                                                                                                                                    printf("Words sorted by length:\n");
+                                                                                                                                        for (i = 0; i < n; i++)
+                                                                                                                                                printf("%s\n", word[i]);
+                                                                                                                                                
+                                                                                                                                                    return 0;
+                                                                                                                                                    }                                                                                                                                                }                                                                                                            }
